@@ -1,1 +1,1 @@
-# password-generator
+# Getting Started with Passsword Generator
