@@ -5,20 +5,18 @@ import styles from './InputBlock.module.css';
 
 const InputBlock: FC<{
   onCopy: () => void;
+  onClick: () => void;
   value: string;
-}> = ({ onCopy, value }) => {
-  const link = () => console.info('hi');
+}> = ({ onCopy, onClick, value }) => (
+  <div className={styles.wrap}>
+    <input className={styles.input} readOnly value={value} />
+    <button className={styles.btn} onClick={onCopy} type="button">
+      <img alt="copy" src={copyIcon} />
+    </button>
+    <button className={styles.btn} onClick={onClick} type="button">
+      <img alt="generate" src={generateIcon} />
+    </button>
+  </div>
+);
 
-  return (
-    <div className={styles.wrap}>
-      <input className={styles.input} readOnly value={value} />
-      <button className={styles.btn} onClick={onCopy} type="button">
-        <img alt="copy" src={copyIcon} />
-      </button>
-      <button className={styles.btn}>
-        <img alt="generate" src={generateIcon} />
-      </button>
-    </div>
-  );
-};
 export default memo(InputBlock);

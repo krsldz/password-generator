@@ -80,6 +80,7 @@ ul,li{
   margin-bottom: 3px;
   border: none;
   border-radius: 30px;
+  cursor: pointer;
   
   transition: all .5s ease-in-out;
   -webkit-transition: all .5s ease-in-out;
