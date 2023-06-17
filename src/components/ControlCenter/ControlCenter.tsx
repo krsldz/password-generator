@@ -13,7 +13,7 @@ const ControlCenter: FC<{
   return (
     <div className={styles.wrap}>
       <div className={styles.dropdownWrap}>
-        <span className={styles.label}>length</span>
+        <span className={styles.label}>password length</span>
         <li className={styles.hovWrap}>
           {length}
           <ul className={styles.main}>
@@ -44,7 +44,7 @@ const ControlCenter: FC<{
         </label>
       </div>
       <div>
-        <span className={styles.label}>include 0-9</span>
+        <span className={styles.label}>include numbers</span>
         <label className={styles.switch}>
           <input
             checked={numbers}

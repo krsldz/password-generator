@@ -13,6 +13,7 @@ const MainPage: FC = () => {
   const [checkboxesValues, setCheckboxesValues] =
     useState<CheckboxTypes>(CheckboxDefaultValues);
   const [length, setLength] = useState<number>(8);
+  const [copied, setCopied] = useState<boolean>(false);
 
   const handleChangePassword = useCallback(() => {
     const { upperCase, numbers, symbols } = checkboxesValues;
@@ -21,9 +22,14 @@ const MainPage: FC = () => {
   }, [checkboxesValues, length, inputValue]);
 
   const handleCopy = useCallback((): void => {
+    if (!inputValue.length) return;
     copy(inputValue, {
       format: 'text/plain',
     });
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
   }, [inputValue]);
 
   const handleChangeCheckbox = useCallback(
@@ -47,7 +53,12 @@ const MainPage: FC = () => {
         <span className={styles.mainTitle}>Keep it safe</span>
         <span className={styles.subTitle}>password generator</span>
       </h1>
-      <InputBlock onClick={handleChangePassword} onCopy={handleCopy} value={inputValue} />
+      <InputBlock
+        isCopied={copied}
+        onClick={handleChangePassword}
+        onCopy={handleCopy}
+        value={inputValue}
+      />
       <ControlCenter
         checkBoxes={checkboxesValues}
         length={length}
