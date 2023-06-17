@@ -15,8 +15,8 @@ body {
 
 .app {
   background-image: linear-gradient(
-    to right bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
-  url(/src/images/jason-dent-3wPJxh-piRw-unsplash.jpg);
+    155deg, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73), transparent 90%),
+  url(/src/images/regularguy-eth--o90yRQoXAM-unsplash.jpg);
   background-size:cover;
   background-repeat:no-repeat;
   background-color: #091521;
