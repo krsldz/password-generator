@@ -1,0 +1,19 @@
+.input {
+  border-radius: 30px;
+  height: 40px;
+  width: 300px;
+  border: none;
+}
+
+.btn {
+  border-radius: 30px;
+  border: none;
+  height: 40px;
+  width: 80px;
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.btn img {
+  height: 16px;
+}

@@ -6,9 +6,17 @@ const ControlCenter: FC = () => {
 
   return (
     <div className={styles.wrap}>
-      <div>
+      <div className={styles.dropdownWrap}>
         <span className={styles.label}>length</span>
-        <input type="checkbox" />
+        <li className={styles.hovWrap}>
+          6
+          <ul className={styles.main}>
+            <li>6</li>
+            <li>8</li>
+            <li>10</li>
+            <li>12</li>
+          </ul>
+        </li>
       </div>
       <div>
         <span className={styles.label}>allow uppercase</span>
