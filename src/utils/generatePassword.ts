@@ -8,5 +8,5 @@ export const generatePassword = (options: {
   symbols: boolean;
 }): string => {
   const { length, upperCase, numbers, symbols } = options;
-  return 'hi its me';
+  return '7E&9Gx(Qh2#G';
 };

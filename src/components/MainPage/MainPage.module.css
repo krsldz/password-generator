@@ -9,6 +9,13 @@
   padding: 30px;
 }
 
+@media screen and (max-width: 760px) {
+  .wrap {
+    position: relative;
+    top: 400px;
+  }
+}
+
 
 .headerWrap {
   color: #fff;
@@ -16,6 +23,13 @@
   backface-visibility: hidden;
   margin-bottom: 60px;
 }
+
+@media screen and (max-width: 760px) {
+  .headerWrap {
+    margin-bottom: 40px;
+  }
+}
+
 
 .mainTitle {
   display: block;
@@ -25,6 +39,14 @@
   animation-name: moveInLeft;
   animation-duration:  1s;
   animation-timing-function: ease-out ;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 760px) {
+  .mainTitle{
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
 }
 
 .subTitle {
@@ -33,6 +55,12 @@
   font-weight: 700;
   letter-spacing: 17.4px;
   animation: moveInRight 1s ease-out ;
+}
+
+@media screen and (max-width: 760px) {
+  .subTitle {
+    font-size: 16px;
+  }
 }
 
 @keyframes moveInLeft {
