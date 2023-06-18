@@ -1,15 +1,12 @@
 import React, { type FC, memo } from 'react';
 import cls from 'classnames';
-import copyIcon from '../../images/icons8-save-all-80.png';
-import generateIcon from '../../images/icons8-available-updates-80.png';
+import copyIcon from '../../images/copyIcon.png';
+import generateIcon from '../../images/generateIcon.png';
+import { InputBlockProps } from './types';
+
 import styles from './InputBlock.module.css';
 
-const InputBlock: FC<{
-  onCopy: () => void;
-  onClick: () => void;
-  value: string;
-  isCopied: boolean;
-}> = ({ onCopy, onClick, value, isCopied }) => (
+const InputBlock: FC<InputBlockProps> = ({ onCopy, onClick, value, isCopied }) => (
   <div className={styles.wrap}>
     <input
       className={cls(styles.input, { [styles.inputActive]: isCopied })}

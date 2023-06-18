@@ -2,11 +2,11 @@ import React, { type FC, memo, useState, useCallback, ChangeEvent } from 'react'
 import copy from 'copy-to-clipboard';
 import ControlCenter from '../ControlCenter/ControlCenter';
 import InputBlock from '../InputBlock/InputBlock';
+import { generatePassword } from '../../utils/generatePassword';
 import { CheckboxTypes } from './types';
 import { CheckboxDefaultValues } from './constants';
 
 import styles from './MainPage.module.css';
-import { generatePassword } from '../../utils/generatePassword';
 
 const MainPage: FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
