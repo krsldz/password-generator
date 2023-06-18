@@ -1,4 +1,3 @@
-import crypto from 'crypto';
 import { LOWERCASE, UPPERCASE, NUMERIC, SYMBOL } from './constants';
 
 export const generatePassword = (options: {
@@ -8,5 +7,16 @@ export const generatePassword = (options: {
   symbols: boolean;
 }): string => {
   const { length, upperCase, numbers, symbols } = options;
-  return '7E&9Gx(Qh2#G';
+  let characters = LOWERCASE;
+  if (upperCase) characters += UPPERCASE;
+  if (numbers) characters += NUMERIC;
+  if (symbols) characters += SYMBOL;
+
+  let password = '';
+
+  for (let i = 0; i < length; i += 1) {
+    password += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+
+  return password;
 };
