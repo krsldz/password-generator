@@ -14,6 +14,7 @@ export const generatePassword = (options: {
 
   let password = '';
 
+  // mixing all the characters and generating a string with certain length and random char
   for (let i = 0; i < length; i += 1) {
     password += characters.charAt(Math.floor(Math.random() * characters.length));
   }
