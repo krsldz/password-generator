@@ -6,6 +6,14 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+
+@media screen and (max-width: 760px) {
+  .wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .switch{
   display: inline-block;
   width: 50px;
@@ -47,11 +55,11 @@
 input:checked + .slider:before {
   transform: translateX(7px);
   width: 30%;
-  background-color: limeGreen;
+  background-color: #90e39a;
 }
 
 input:checked + .slider {
-  box-shadow: 0 0 0 2px limeGreen, 0 0 8px limeGreen;
+  box-shadow: 0 0 0 2px #90e39a, 0 0 10px #90e39a;
 }
 
 .label {
@@ -123,17 +131,19 @@ input:checked + .slider {
   width: 50px;
   height: 25px;
   background: transparent;
-  box-shadow: 0 0 0 2px limeGreen, 0 0 8px limeGreen;
+  box-shadow: 0 0 0 2px #90e39a, 0 0 10px #90e39a;
   color: white;
   text-align: center;
   list-style:none;
   z-index:2;
   border-radius: 30px;
   cursor: pointer;
+  margin-top: 5px;
+  margin-left: 3px;
 }
 
 
 .dropdownWrap {
   display: flex;
-  margin-left: 32px;
+  margin-left: 31px;
 }

@@ -4,6 +4,13 @@
   align-items: center;
 }
 
+@media screen and (max-width: 760px) {
+  .wrap {
+    flex-direction: column;
+  }
+}
+
+
 .input {
   border-radius: 30px;
   height: 50px;
@@ -17,8 +24,15 @@
   outline: none;
 }
 
+@media screen and (max-width: 760px) {
+  .input {
+    margin-bottom: 20px;
+    width: 350px;
+  }
+}
+
 .inputActive {
-  box-shadow: 0 0 0 2px limeGreen, 0 0 20px limeGreen;
+  box-shadow: 0 0 0 2px #90e39a, 0 0 20px #90e39a;
   transition: all .5s ease-in-out;
 }
 
@@ -31,7 +45,22 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 760px) {
+  .btn {
+    width: 150px;
+    margin: 0;
+  }
+  .btn:first-child {
+    margin-right: 15px;
+  }
+}
+
+
 .btn img {
   height: 23px;
   margin-top: 2px;
+}
+
+.btnBlock {
+  display: flex;
 }

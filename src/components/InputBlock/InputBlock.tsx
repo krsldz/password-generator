@@ -16,12 +16,14 @@ const InputBlock: FC<{
       readOnly
       value={value}
     />
-    <button className={styles.btn} onClick={onCopy} type="button">
-      <img alt="copy" src={copyIcon} />
-    </button>
-    <button className={styles.btn} onClick={onClick} type="button">
-      <img alt="generate" src={generateIcon} />
-    </button>
+    <div className={styles.btnBlock}>
+      <button className={styles.btn} onClick={onCopy} type="button">
+        <img alt="copy" src={copyIcon} />
+      </button>
+      <button className={styles.btn} onClick={onClick} type="button">
+        <img alt="generate" src={generateIcon} />
+      </button>
+    </div>
   </div>
 );
 
