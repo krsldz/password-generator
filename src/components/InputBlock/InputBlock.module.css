@@ -36,6 +36,10 @@
   transition: all .5s ease-in-out;
 }
 
+.btnBlock {
+  display: flex;
+}
+
 .btn {
   border-radius: 30px;
   border: none;
@@ -59,8 +63,4 @@
 .btn img {
   height: 23px;
   margin-top: 2px;
-}
-
-.btnBlock {
-  display: flex;
 }
