@@ -11,7 +11,6 @@ const ControlCenter: FC<ControlCenterProps> = ({
   onChangeLength,
   length,
 }) => {
-  const { symbols, numbers, upperCase } = checkBoxes;
   const lengthValues = [6, 8, 10, 12, 14, 16];
 
   return (
@@ -22,15 +21,24 @@ const ControlCenter: FC<ControlCenterProps> = ({
       </div>
       <div>
         <span className={styles.label}>allow uppercase</span>
-        <Slider isChecked={upperCase} onChange={onChangeCheckbox('upperCase')} />
+        <Slider
+          isChecked={checkBoxes.includes('upperCase')}
+          onChange={onChangeCheckbox('upperCase')}
+        />
       </div>
       <div>
         <span className={styles.label}>include numbers</span>
-        <Slider isChecked={numbers} onChange={onChangeCheckbox('numbers')} />
+        <Slider
+          isChecked={checkBoxes.includes('numbers')}
+          onChange={onChangeCheckbox('numbers')}
+        />
       </div>
       <div>
         <span className={styles.label}>include symbols</span>
-        <Slider isChecked={symbols} onChange={onChangeCheckbox('symbols')} />
+        <Slider
+          isChecked={checkBoxes.includes('symbols')}
+          onChange={onChangeCheckbox('symbols')}
+        />
       </div>
     </div>
   );

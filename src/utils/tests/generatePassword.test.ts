@@ -1,10 +1,9 @@
+import { SettingsTypes } from '../../components/MainPage/types';
 import { generatePassword } from '../generatePassword';
 
 const data = {
   length: 8,
-  numbers: true,
-  symbols: false,
-  upperCase: true,
+  settings: ['upperCase', 'numbers'] as SettingsTypes[],
 };
 
 describe('utils generatePassword', () => {

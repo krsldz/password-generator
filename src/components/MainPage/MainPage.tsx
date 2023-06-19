@@ -1,25 +1,50 @@
-import React, { type FC, memo, useState, useCallback, ChangeEvent } from 'react';
+import React, {
+  type FC,
+  memo,
+  useState,
+  useCallback,
+  ChangeEvent,
+  useEffect,
+} from 'react';
 import copy from 'copy-to-clipboard';
 import ControlCenter from '../ControlCenter/ControlCenter';
 import InputBlock from '../InputBlock/InputBlock';
 import { generatePassword } from '../../utils/generatePassword';
-import { CheckboxTypes } from './types';
-import { CheckboxDefaultValues } from './constants';
+import { searchInStorage } from '../../utils/searchInStorage';
+import { writeToStorage } from '../../utils/writeToStorage';
+import { SettingsTypes } from './types';
+import { SettingsDefaultValues } from './constants';
 
 import styles from './MainPage.module.css';
 
 const MainPage: FC = () => {
   const [inputValue, setInputValue] = useState<string>('');
-  const [checkboxesValues, setCheckboxesValues] =
-    useState<CheckboxTypes>(CheckboxDefaultValues);
+  const [settings, setSettings] = useState<SettingsTypes[]>(SettingsDefaultValues);
   const [length, setLength] = useState<number>(8);
   const [copied, setCopied] = useState<boolean>(false);
 
+  useEffect(() => {
+    const storageDataLength = searchInStorage('length');
+    if (storageDataLength) {
+      setLength(storageDataLength as number);
+    } else {
+      writeToStorage('length', 8);
+    }
+  }, []);
+
+  useEffect(() => {
+    const storageData = searchInStorage('settings');
+    if (storageData) {
+      setSettings(storageData as SettingsTypes[]);
+    } else {
+      writeToStorage('settings', SettingsDefaultValues);
+    }
+  }, []);
+
   const handleChangePassword = useCallback(() => {
-    const { upperCase, numbers, symbols } = checkboxesValues;
-    const result = generatePassword({ length, numbers, symbols, upperCase });
+    const result = generatePassword({ length, settings });
     setInputValue(result);
-  }, [checkboxesValues, length, inputValue]);
+  }, [settings, length, inputValue]);
 
   const handleCopy = useCallback((): void => {
     if (!inputValue.length) return;
@@ -33,16 +58,21 @@ const MainPage: FC = () => {
   }, [inputValue]);
 
   const handleChangeCheckbox = useCallback(
-    (type: string) =>
+    (type: SettingsTypes) =>
       (event: ChangeEvent<HTMLInputElement>): void => {
-        setCheckboxesValues({ ...checkboxesValues, [type]: event.target.checked });
+        const returnValue = settings.includes(type)
+          ? settings.filter((val) => val !== type)
+          : [...settings, type];
+        setSettings(returnValue);
+        writeToStorage('settings', returnValue);
       },
-    [checkboxesValues]
+    [settings]
   );
 
   const handleChangeLength = useCallback(
     (value: number): void => {
       setLength(value);
+      writeToStorage('length', value);
     },
     [length]
   );
@@ -60,7 +90,7 @@ const MainPage: FC = () => {
         value={inputValue}
       />
       <ControlCenter
-        checkBoxes={checkboxesValues}
+        checkBoxes={settings}
         length={length}
         onChangeCheckbox={handleChangeCheckbox}
         onChangeLength={handleChangeLength}
