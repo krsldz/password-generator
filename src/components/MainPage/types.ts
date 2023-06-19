@@ -1,5 +1,1 @@
-export type CheckboxTypes = {
-  upperCase: boolean;
-  numbers: boolean;
-  symbols: boolean;
-};
+export type SettingsTypes = 'upperCase' | 'numbers' | 'symbols';

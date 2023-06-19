@@ -1,7 +1,3 @@
-import { CheckboxTypes } from './types';
+import { SettingsTypes } from './types';
 
-export const CheckboxDefaultValues: CheckboxTypes = {
-  numbers: true,
-  symbols: false,
-  upperCase: true,
-};
+export const SettingsDefaultValues: SettingsTypes[] = ['numbers', 'upperCase'];

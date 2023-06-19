@@ -1,9 +1,11 @@
 import { ChangeEvent } from 'react';
-import { CheckboxTypes } from '../MainPage/types';
+import { SettingsTypes } from '../MainPage/types';
 
 export type ControlCenterProps = {
-  checkBoxes: CheckboxTypes;
+  checkBoxes: SettingsTypes[];
   length: number;
-  onChangeCheckbox: (type: string) => (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeCheckbox: (
+    type: SettingsTypes
+  ) => (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeLength: (value: number) => void;
 };

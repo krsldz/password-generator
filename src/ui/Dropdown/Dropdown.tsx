@@ -8,7 +8,7 @@ const Dropdown: FC<DropdownProps> = ({ onChange, values, length }) => (
     {length}
     <ul className={styles.list}>
       {values.map((value) => (
-        <li>
+        <li key={value}>
           <div onClick={() => onChange(value)}>{value}</div>
         </li>
       ))}

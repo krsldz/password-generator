@@ -1,16 +1,15 @@
+import { SettingsTypes } from '../components/MainPage/types';
 import { LOWERCASE, UPPERCASE, NUMERIC, SYMBOL } from './constants';
 
 export const generatePassword = (options: {
   length: number;
-  upperCase: boolean;
-  numbers: boolean;
-  symbols: boolean;
+  settings: SettingsTypes[];
 }): string => {
-  const { length, upperCase, numbers, symbols } = options;
+  const { length, settings } = options;
   let characters = LOWERCASE;
-  if (upperCase) characters += UPPERCASE;
-  if (numbers) characters += NUMERIC;
-  if (symbols) characters += SYMBOL;
+  if (settings.includes('upperCase')) characters += UPPERCASE;
+  if (settings.includes('numbers')) characters += NUMERIC;
+  if (settings.includes('symbols')) characters += SYMBOL;
 
   let password = '';
 
