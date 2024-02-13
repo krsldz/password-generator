@@ -32,12 +32,12 @@
   height: 100%;
   background-color: white;
   border-radius: 30px;
-  transform: translateX(-30px);
+  transform: translateX(30px);
   transition: 0.2s;
 }
 
 input:checked + .slider:before {
-  transform: translateX(7px);
+  transform: translateX(1px);
   width: 30%;
   background-color: #90e39a;
 }
