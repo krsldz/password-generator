@@ -3,7 +3,7 @@
 An easy to use password generator — no need to sign up and watch ads
 
 <video width="480" controls>
-  <source src="public/keepitsafe-demo.mov" type="video/mp4">
+  <source src="public/keepitsafe-demo.mp4" type="video/mp4">
 </video>
 
 ## Demo
