@@ -2,10 +2,6 @@
 
 An easy to use password generator — no need to sign up and watch ads
 
-<video width="480" controls>
-  <source src="public/keepitsafe-demo.mp4" type="video/mp4">
-</video>
-
 ## Demo
 
 Here is a working live demo: https://keepitsafe.netlify.app/
@@ -14,7 +10,13 @@ Here is a working live demo: https://keepitsafe.netlify.app/
 
 The app is compatible with devices of all sizes and all OS's:
 <p>
+  <div>iOS</div>
+  <br>
   <img src="public/keepitsafe-ios-screen.PNG" width="250" title="iOS">
+  <br>
+  <div>Laptop</div>
+  <br>
+  <img src="public/keepitsafe-laptop-screen.png" width="480" title="laptop">
 </p>
 
 ## Installation
